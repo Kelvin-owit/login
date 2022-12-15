@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+
+    <!-- Font Awesome -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1>Register</h1>
+        <form>
+          <div class="input">
+            <input type="text" placeholder="Email" />
+          </div>
+
+          <div class="input">
+            <input type=" Password" placeholder="Password" id="password" />
+            <img src="eye-solid.svg" width="20px" alt="icon" id="eye-icon" />
+          </div>
+          <div class="input">
+            <input
+              type="password"
+              placeholder="Confirm password"
+              id="password-confirm"
+            />
+            <img src="eye-solid.svg" width="20px" alt="icon" id="eye-icon" />
+          </div>
+          <button>SIGNUP</button>
+        </form>
+
+        <p>Already have an account? <a href="index.html">Sign In</a></p>
+      </div>
+    </div>
+
+    <script>
+      let password = document.getElementById("password");
+      let passwordConfirm = document.getElementById("password-confirm");
+      let icons = document.querySelectorAll("#eye-icon");
+
+      icons.forEach((icon) => {
+        icon.addEventListener("click", () => {
+          if (password.type == "password") {
+            password.type = "text";
+            passwordConfirm.type = "text";
+            icons.forEach((icon) => {
+              icon.src = "eye-slash-solid.svg";
+            });
+          } else {
+            password.type = "password";
+            passwordConfirm.type = "password";
+            icons.forEach((icon) => {
+              icon.src = "eye-solid.svg";
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

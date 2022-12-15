@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawesome -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1>Login</h1>
+        <form>
+          <div class="input">
+            <input type="text" placeholder="Email" />
+          </div>
+
+          <div class="input">
+            <input type=" Password" placeholder="Password" id="password" />
+            <img src="eye-solid.svg" width="20px" alt="icon" id="eye-icon" />
+          </div>
+          <button>LOGIN</button>
+        </form>
+        <p>
+          <a href="#">Forgot Password?</a>
+        </p>
+        <p>Don't have an account? <a href="register.html"> Sign up</a></p>
+      </div>
+    </div>
+
+    <script>
+      let password = document.getElementById("password");
+      let icon = document.getElementById("eye-icon");
+
+      icon.onclick = () => {
+        if (password.type == "password") {
+          password.type = "text";
+          icon.src = "eye-slash-solid.svg";
+        } else {
+          password.type = "password";
+          icon.src = "eye-solid.svg";
+        }
+      };
+    </script>
+  </body>
+</html>
